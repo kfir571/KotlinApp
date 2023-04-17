@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_nav"
+    app:startDestination="@id/showMoviesFragment">
+    <fragment
+        android:id="@+id/showMoviesFragment"
+        android:name="com.example.finalprojectkotlin.ui.showallmovies.ShowMoviesFragment"
+        android:label="show_movies"
+        tools:layout="@layout/show_movies" >
+        <action
+            android:id="@+id/action_showMoviesFragment_to_detailsMovieFragment2"
+            app:destination="@id/detailsMovieFragment2" />
+        <action
+            android:id="@+id/action_showMoviesFragment_to_addMovieFragment2"
+            app:destination="@id/addMovieFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/addMovieFragment2"
+        android:name="com.example.finalprojectkotlin.ui.addmovie.AddMovieFragment"
+        android:label="add_movie"
+        tools:layout="@layout/add_movie" >
+        <action
+            android:id="@+id/action_addMovieFragment2_to_showMoviesFragment"
+            app:destination="@id/showMoviesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailsMovieFragment2"
+        android:name="com.example.finalprojectkotlin.ui.moviedetails.DetailsMovieFragment"
+        android:label="details_one_movie"
+        tools:layout="@layout/details_one_movie" />
+</navigation>
