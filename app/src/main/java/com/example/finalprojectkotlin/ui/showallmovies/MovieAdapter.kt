@@ -41,7 +41,7 @@ class MovieAdapter(val movies:List<Movie>, val callBack: MovieListener)
             binding.MovieGenre.text=item.genre
             binding.MovieYear.text=item.year
             //binding.itemImage.setImageURI(Uri.parse(item.photo))
-            Glide.with(binding.root).load(item.photo).circleCrop()
+            Glide.with(binding.root).load(item.photo)
                 .into(binding.itemImage)
         }
     }

@@ -36,7 +36,7 @@ class DetailsMovieFragment:Fragment() {
             binding.movieDescription.text = it.description
             binding.movieGenre.text = it.genre
             binding.movieYear.text = it.year
-            Glide.with(requireContext()).load(it.photo).circleCrop()
+            Glide.with(requireContext()).load(it.photo)
                 .into(binding.itemImage)
         }
 //        arguments?.getInt("movie")?.let {

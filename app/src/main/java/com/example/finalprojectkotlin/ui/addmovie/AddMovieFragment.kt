@@ -25,6 +25,8 @@ class AddMovieFragment:Fragment() {
 
     private var imageUri: Uri? = null
 
+
+    private val viewModel : moviesViewModel by activityViewModels()
     var chooseImageLauncher : ActivityResultLauncher<Array<String>> =
         registerForActivityResult(ActivityResultContracts.OpenDocument()) {
             binding.resultImage.setImageURI(it)
@@ -42,8 +44,13 @@ class AddMovieFragment:Fragment() {
 
         binding.finishBtn.setOnClickListener {
 
-            val movie  = Movie(binding.itemTitle.text.toString(),binding.itemGenre.text.toString(),
-                binding.itemYearRelease.text.toString(),binding.itemDescription.text.toString(),imageUri.toString())
+            val movie  = Movie(binding.itemTitle.text.toString(),
+                binding.itemDescription.text.toString(),
+                binding.itemGenre.text.toString(),
+                binding.itemYearRelease.text.toString(),
+                imageUri.toString())
+
+            viewModel.addMovie(movie)
 
             findNavController().navigate(
                 R.id.action_addMovieFragment2_to_showMoviesFragment
