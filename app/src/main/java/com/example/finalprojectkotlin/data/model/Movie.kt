@@ -7,6 +7,8 @@ import androidx.room.PrimaryKey
 import kotlinx.parcelize.Parcelize
 import java.io.Serializable
 
+// The commented lines below should be DELETED
+
 //@Parcelize
 //data class Movie(val title:String, val description:String,val genre:String,val year:String,val photo: String?) : Parcelable
 
@@ -31,6 +33,9 @@ data class Movie(
     @PrimaryKey(autoGenerate = true)
     var id: Int = 0
 }
+
+// The commented lines below should be DELETED
+
 //object ItemManager {
 //
 //    val movies : MutableList<Movie> = mutableListOf()

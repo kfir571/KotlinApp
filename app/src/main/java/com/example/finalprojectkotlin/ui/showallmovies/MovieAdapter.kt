@@ -8,7 +8,7 @@ import com.bumptech.glide.Glide
 import com.example.finalprojectkotlin.data.model.Movie
 import com.example.finalprojectkotlin.databinding.MovieLayoutBinding
 
-
+// maybe we should add 'private' to the val below
 class MovieAdapter(val movies:List<Movie>, val callBack: MovieListener)
     : RecyclerView.Adapter<MovieAdapter.MovieViewHolder>() {
 
@@ -46,7 +46,16 @@ class MovieAdapter(val movies:List<Movie>, val callBack: MovieListener)
         }
     }
 
-    fun movieAt(position:Int) = movies[position]
+    //fun movieAt(position:Int) = movies[position]
+
+    // Updated implementation of movieAt that check the function doesn't return invalid value
+    fun movieAt(position: Int): Movie {
+        return if (position >= 0 && position < movies.size) {
+            movies[position]
+        } else {
+            movies[0]
+        }
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) =
         MovieViewHolder(MovieLayoutBinding.inflate(LayoutInflater.from(parent.context),parent,false))

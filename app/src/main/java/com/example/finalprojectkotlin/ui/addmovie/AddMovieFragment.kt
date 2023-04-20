@@ -19,15 +19,18 @@ import com.example.finalprojectkotlin.ui.moviesViewModel
 
 class AddMovieFragment:Fragment() {
 
+    // binding is the connector between our UI and our data
     private var _binding : AddMovieBinding? = null
 
     private val binding get() = _binding!!
 
     private var imageUri: Uri? = null
 
-
+    // We use activityViewModels so that all our fragments will use the *same instance* of viewModel
     private val viewModel : moviesViewModel by activityViewModels()
-    var chooseImageLauncher : ActivityResultLauncher<Array<String>> =
+
+    // This is asking for permission to access the gallery
+    private var chooseImageLauncher : ActivityResultLauncher<Array<String>> =
         registerForActivityResult(ActivityResultContracts.OpenDocument()) {
             binding.resultImage.setImageURI(it)
             if (it != null) {
@@ -42,8 +45,8 @@ class AddMovieFragment:Fragment() {
     ): View? {
         _binding = AddMovieBinding.inflate(inflater,container,false)
 
+        // Adding the movie (with the data the user entered) to our local DB
         binding.finishBtn.setOnClickListener {
-
             val movie  = Movie(binding.itemTitle.text.toString(),
                 binding.itemDescription.text.toString(),
                 binding.itemGenre.text.toString(),
@@ -52,6 +55,7 @@ class AddMovieFragment:Fragment() {
 
             viewModel.addMovie(movie)
 
+            // Going back to hone screen
             findNavController().navigate(
                 R.id.action_addMovieFragment2_to_showMoviesFragment
                 , bundleOf("movie" to movie)

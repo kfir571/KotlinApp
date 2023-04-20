@@ -13,24 +13,32 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.finalprojectkotlin.R
 import com.example.finalprojectkotlin.databinding.ShowMoviesBinding
+import com.example.finalprojectkotlin.ui.MainActivity
 import com.example.finalprojectkotlin.ui.moviesViewModel
 
 class ShowMoviesFragment:Fragment() {
+    // binding is the connector between our UI and our data
     private var _binding : ShowMoviesBinding? = null
 
     private val binding get() = _binding!!
 
+    // We use activityViewModels so that all our fragments will use the *same instance* of viewModel
     private val viewModel : moviesViewModel by activityViewModels()
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        // The line setHasOptionsMenu(true) indicates that this fragment has its own options menu
+        // Eran used it for 'delete all' button
         setHasOptionsMenu(true)
+
+        // Creating the connection var from the data (model) to our UI
         _binding = ShowMoviesBinding.inflate(inflater,container,false)
 
+        // Moving to 'add movie' layout when '+' button in clicked-on
         binding.fab.setOnClickListener {
-
             findNavController().navigate(R.id.action_showMoviesFragment_to_addMovieFragment2)
         }
         return binding.root
@@ -39,14 +47,16 @@ class ShowMoviesFragment:Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        // Check what this command is doing
         arguments?.getString("movie")?.let {
             Toast.makeText(requireActivity(), it, Toast.LENGTH_SHORT).show()
         }
+
+        // Setting observer on the user's actions and the matching responses
         viewModel.movies?.observe(viewLifecycleOwner) {
             binding.recycler.adapter = MovieAdapter(it, object : MovieAdapter.MovieListener {
 
                 override fun onItemClicked(index: Int) {
-
                     Toast.makeText(
                         requireContext(),
                         "${it[index]}", Toast.LENGTH_SHORT
@@ -54,7 +64,6 @@ class ShowMoviesFragment:Fragment() {
                 }
 
                 override fun onItemLongClicked(index: Int) {
-
                     viewModel.setMovie(it[index])
                     findNavController().navigate(
                         R.id.action_showMoviesFragment_to_detailsMovieFragment2,
@@ -66,6 +75,7 @@ class ShowMoviesFragment:Fragment() {
 
             ItemTouchHelper(object : ItemTouchHelper.Callback() {
 
+                // Allowing the user to move right and left
                 override fun getMovementFlags(
                     recyclerView: RecyclerView,
                     viewHolder: RecyclerView.ViewHolder
@@ -74,6 +84,7 @@ class ShowMoviesFragment:Fragment() {
                     ItemTouchHelper.LEFT or ItemTouchHelper.RIGHT
                 )
 
+                // Must implemention
                 override fun onMove(
                     recyclerView: RecyclerView,
                     viewHolder: RecyclerView.ViewHolder,
@@ -82,15 +93,39 @@ class ShowMoviesFragment:Fragment() {
                     TODO("Not yet implemented")
                 }
 
+                // Delete process (with alert dialog) on swipe
                 override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
-                    val item =
-                        (binding.recycler.adapter as MovieAdapter).movieAt(viewHolder.adapterPosition)
-                    viewModel.deleteMovie(item)
+
+                    // Saving the index of the swiped item
+                    val currIndex = viewHolder.adapterPosition
+
+                    // The line below makes the item return to the front of the screen after the swipe
+                    binding.recycler.adapter?.notifyItemChanged(currIndex)
+
+                    // The 'Are you sure you want to delete' alert dialog
+                    val builder : AlertDialog.Builder = AlertDialog.Builder(requireContext())
+                    builder.apply {
+                        setTitle("Delete Movie:")
+                        setMessage("Are you sure you want to delete this item?")
+                        builder.setPositiveButton("Delete") { _, _ ->
+                            // Delete item logic here
+                            val item =
+                                (binding.recycler.adapter as MovieAdapter).movieAt(currIndex)
+                            viewModel.deleteMovie(item)
+                        }
+
+                        builder.setNegativeButton("Cancel") { dialog, _ ->
+                            // Dismiss dialog
+                            dialog.dismiss()
+                        }
+                    }
+                    val dialog = builder.create()
+                    dialog.show()
                 }
             }).attachToRecyclerView(binding.recycler)
         }
-
     }
+
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null

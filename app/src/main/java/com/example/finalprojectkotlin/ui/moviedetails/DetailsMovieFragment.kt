@@ -12,10 +12,13 @@ import com.example.finalprojectkotlin.ui.moviesViewModel
 
 class DetailsMovieFragment:Fragment() {
 
+    // binding is the connector between our UI and our data
+    private var _binding : DetailsOneMovieBinding?  = null
 
-    var _binding : DetailsOneMovieBinding?  = null
-    val viewModel:moviesViewModel by activityViewModels()
-    val binding get() = _binding!!
+    // We use activityViewModels so that all our fragments will use the *same instance* of viewModel
+    private val viewModel : moviesViewModel by activityViewModels()
+
+    private val binding get() = _binding!!
 
 
     override fun onCreateView(
@@ -28,6 +31,7 @@ class DetailsMovieFragment:Fragment() {
         return binding.root
     }
 
+    // Displaying the movie details on screen (using the connector - binding)
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -39,6 +43,9 @@ class DetailsMovieFragment:Fragment() {
             Glide.with(requireContext()).load(it.photo)
                 .into(binding.itemImage)
         }
+
+        // The lines below should be DELETED
+
 //        arguments?.getInt("movie")?.let {
 //
 //
