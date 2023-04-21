@@ -7,7 +7,6 @@ import com.example.finalprojectkotlin.data.localdb.MovieDataBase
 
 class MovieRepository(application: Application) {
     private var movieDao:MovieDao?
-
     init {
         val db  = MovieDataBase.getDatabase(application.applicationContext)
         movieDao = db?.moviesDao()

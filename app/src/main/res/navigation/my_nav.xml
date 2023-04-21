@@ -23,7 +23,9 @@
         tools:layout="@layout/add_movie" >
         <action
             android:id="@+id/action_addMovieFragment2_to_showMoviesFragment"
-            app:destination="@id/showMoviesFragment" />
+            app:destination="@id/showMoviesFragment"
+            app:popUpTo="@id/showMoviesFragment"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/detailsMovieFragment2"

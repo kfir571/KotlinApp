@@ -12,7 +12,6 @@ abstract class MovieDataBase: RoomDatabase() {
     abstract fun moviesDao(): MovieDao
 
     companion object {
-
         @Volatile
         private var instance: MovieDataBase? = null
 
@@ -20,6 +19,5 @@ abstract class MovieDataBase: RoomDatabase() {
             Room.databaseBuilder(context.applicationContext, MovieDataBase::class.java, "movies_db")
                 .allowMainThreadQueries().build()
         }
-
     }
 }
