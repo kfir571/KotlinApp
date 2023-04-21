@@ -40,13 +40,11 @@ class MovieAdapter(val movies:List<Movie>, val callBack: MovieListener)
             binding.movieTitle.text = item.title
             binding.MovieGenre.text=item.genre
             binding.MovieYear.text=item.year
-            //binding.itemImage.setImageURI(Uri.parse(item.photo))
             Glide.with(binding.root).load(item.photo)
                 .into(binding.itemImage)
         }
     }
 
-    //fun movieAt(position:Int) = movies[position]
 
     // Updated implementation of movieAt that check the function doesn't return invalid value
     fun movieAt(position: Int): Movie {

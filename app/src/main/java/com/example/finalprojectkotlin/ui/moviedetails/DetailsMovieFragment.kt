@@ -43,18 +43,6 @@ class DetailsMovieFragment:Fragment() {
             Glide.with(requireContext()).load(it.photo)
                 .into(binding.itemImage)
         }
-
-        // The lines below should be DELETED
-
-//        arguments?.getInt("movie")?.let {
-//
-//
-//            binding.movieTitle.text = item.title
-//            binding.movieDescription.text = item.description
-//            binding.movieGenre.text = item.genre
-//            binding.movieYear.text = item.year
-//            Glide.with(requireContext()).load(item.photo).circleCrop()
-//                .into(binding.itemImage)
     }
 
     override fun onDestroyView() {

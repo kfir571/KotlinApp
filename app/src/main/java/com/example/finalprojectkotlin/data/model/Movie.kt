@@ -7,11 +7,6 @@ import androidx.room.PrimaryKey
 import kotlinx.parcelize.Parcelize
 import java.io.Serializable
 
-// The commented lines below should be DELETED
-
-//@Parcelize
-//data class Movie(val title:String, val description:String,val genre:String,val year:String,val photo: String?) : Parcelable
-
 @Parcelize
 @Entity(tableName = "movies")
 data class Movie(
@@ -34,16 +29,3 @@ data class Movie(
     var id: Int = 0
 }
 
-// The commented lines below should be DELETED
-
-//object ItemManager {
-//
-//    val movies : MutableList<Movie> = mutableListOf()
-//
-//    fun add(item: Movie) {
-//        movies.add(item)
-//    }
-//
-//    fun remove(index:Int) {
-//        movies.removeAt(index)
-//    }

@@ -15,7 +15,7 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Enter movie Title"
+            android:hint="@string/add_movie_title"
             android:id="@+id/item_title"/>
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -27,7 +27,7 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Enter movie Description"
+            android:hint="@string/add_movie_description"
             android:id="@+id/item_description" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -39,7 +39,7 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Enter movie year release"
+            android:hint="@string/add_movie_year"
             android:id="@+id/item_year_release" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -51,7 +51,7 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Enter movie genre"
+            android:hint="@string/add_movie_genre"
             android:id="@+id/item_genre" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -62,13 +62,13 @@
         android:layout_gravity="center"
         android:layout_marginTop="15dp"
         android:id="@+id/result_image"
-        android:contentDescription="add_pic"
+        android:contentDescription="@string/add_picture"
         android:src="@drawable/baseline_add_a_photo_24"/>
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Add movie"
+        android:text="@string/add_movie"
         android:id="@+id/finish_btn"
         android:layout_gravity="center"
         android:layout_marginTop="10dp"/>

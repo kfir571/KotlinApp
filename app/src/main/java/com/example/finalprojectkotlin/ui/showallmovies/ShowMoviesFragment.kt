@@ -15,6 +15,7 @@ import com.example.finalprojectkotlin.R
 import com.example.finalprojectkotlin.databinding.ShowMoviesBinding
 import com.example.finalprojectkotlin.ui.MainActivity
 import com.example.finalprojectkotlin.ui.moviesViewModel
+import com.google.android.material.snackbar.Snackbar
 
 class ShowMoviesFragment:Fragment() {
     // binding is the connector between our UI and our data
@@ -47,19 +48,15 @@ class ShowMoviesFragment:Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // Check what this command is doing
-        arguments?.getString("movie")?.let {
-            Toast.makeText(requireActivity(), it, Toast.LENGTH_SHORT).show()
-        }
 
         // Setting observer on the user's actions and the matching responses
         viewModel.movies?.observe(viewLifecycleOwner) {
             binding.recycler.adapter = MovieAdapter(it, object : MovieAdapter.MovieListener {
 
                 override fun onItemClicked(index: Int) {
-                    Toast.makeText(
-                        requireContext(),
-                        "${it[index]}", Toast.LENGTH_SHORT
+                    Snackbar.make(
+                       requireView(),
+                        getString(R.string.orders), Toast.LENGTH_SHORT
                     ).show()
                 }
 
@@ -105,16 +102,16 @@ class ShowMoviesFragment:Fragment() {
                     // The 'Are you sure you want to delete' alert dialog
                     val builder : AlertDialog.Builder = AlertDialog.Builder(requireContext())
                     builder.apply {
-                        setTitle("Delete Movie:")
-                        setMessage("Are you sure you want to delete this item?")
-                        builder.setPositiveButton("Delete") { _, _ ->
+                        setTitle(getString(R.string.delete_movie))
+                        setMessage(getString(R.string.delete_movie_msg))
+                        builder.setPositiveButton(getString(R.string.delete_movie_btn)) { _, _ ->
                             // Delete item logic here
                             val item =
                                 (binding.recycler.adapter as MovieAdapter).movieAt(currIndex)
                             viewModel.deleteMovie(item)
                         }
 
-                        builder.setNegativeButton("Cancel") { dialog, _ ->
+                        builder.setNegativeButton(getString(R.string.delete_movie_cancel_btn)) { dialog, _ ->
                             // Dismiss dialog
                             dialog.dismiss()
                         }
