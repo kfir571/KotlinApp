@@ -17,5 +17,8 @@
     <string name="delete_movie_cancel_btn">Cancel</string>
 
     <string name="orders">Long click for more details\nSwipe to delete</string>
+    <string name="edit_movie">Edit Movie</string>
+    <!-- TODO: Remove or change this placeholder text -->
+
 </resources>
 

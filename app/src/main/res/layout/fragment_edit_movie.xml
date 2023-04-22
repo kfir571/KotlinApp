@@ -2,7 +2,7 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".ui.addmovie.AddMovieFragment"
+    tools:context=".ui.editMovie.EditMovieFragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#1B1D20">
@@ -18,7 +18,7 @@
             android:layout_height="wrap_content"
             android:textSize="30dp"
             android:textColor="@color/white"
-            android:text="@string/add_movie"
+            android:text="@string/edit_movie"
             android:gravity="center"
             android:paddingBottom="8dp"/>
 
@@ -94,7 +94,7 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/add_movie"
+            android:text="@string/edit_movie"
             android:id="@+id/finish_btn"
             android:layout_gravity="center"
             android:layout_marginTop="10dp"
@@ -103,3 +103,11 @@
 
     </LinearLayout>
 </ScrollView>
+
+
+
+
+
+
+
+

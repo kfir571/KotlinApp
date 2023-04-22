@@ -15,6 +15,10 @@
         <action
             android:id="@+id/action_showMoviesFragment_to_addMovieFragment2"
             app:destination="@id/addMovieFragment2" />
+        <action
+            android:id="@+id/action_showMoviesFragment_to_editMovieFragment"
+            app:destination="@id/editMovieFragment"
+            app:popUpToInclusive="false" />
     </fragment>
     <fragment
         android:id="@+id/addMovieFragment2"
@@ -32,4 +36,15 @@
         android:name="com.example.finalprojectkotlin.ui.moviedetails.DetailsMovieFragment"
         android:label="details_one_movie"
         tools:layout="@layout/details_one_movie" />
+    <fragment
+        android:id="@+id/editMovieFragment"
+        android:name="com.example.finalprojectkotlin.ui.editMovie.EditMovieFragment"
+        android:label="fragment_edit_movie"
+        tools:layout="@layout/fragment_edit_movie" >
+        <action
+            android:id="@+id/action_editMovieFragment_to_showMoviesFragment"
+            app:destination="@id/showMoviesFragment"
+            app:popUpTo="@id/showMoviesFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
 </navigation>
