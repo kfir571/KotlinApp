@@ -61,6 +61,11 @@ class ShowMoviesFragment:Fragment() {
             binding.recycler.adapter = MovieAdapter(it, object : MovieAdapter.MovieListener {
 
                 override fun onItemClicked(index: Int) {
+                    viewModel.setMovie(it[index])
+                    findNavController().navigate(
+                        R.id.action_showMoviesFragment_to_detailsMovieFragment2,
+                        bundleOf("movie" to index)
+                    )
 //                    Snackbar.make(
 //                       requireView(),
 //                        getString(R.string.orders), Toast.LENGTH_SHORT
@@ -70,9 +75,14 @@ class ShowMoviesFragment:Fragment() {
                 override fun onItemLongClicked(index: Int) {
                     viewModel.setMovie(it[index])
                     findNavController().navigate(
-                        R.id.action_showMoviesFragment_to_detailsMovieFragment2,
+                        R.id.action_showMoviesFragment_to_editMovieFragment,
                         bundleOf("movie" to index)
                     )
+//                    viewModel.setMovie(it[index])
+//                    findNavController().navigate(
+//                        R.id.action_showMoviesFragment_to_detailsMovieFragment2,
+//                        bundleOf("movie" to index)
+//                    )
                 }
             })
             binding.recycler.layoutManager = LinearLayoutManager(requireContext())
