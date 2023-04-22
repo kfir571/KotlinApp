@@ -1,98 +1,105 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.addmovie.AddMovieFragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".ui.addmovie.AddMovieFragment"
-    android:padding="16dp"
     android:background="#1B1D20">
+    <LinearLayout
 
-    <TextView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="30dp"
-        android:textColor="@color/white"
-        android:text="Add Movie"
-        android:gravity="center"
-        android:paddingBottom="8dp"/>
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp">
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#FF36444E"
-        app:counterTextColor="@color/white"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
-        <com.google.android.material.textfield.TextInputEditText
+        <TextView
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:hint="@string/add_movie_title"
-            android:id="@+id/item_title"/>
-    </com.google.android.material.textfield.TextInputLayout>
+            android:layout_height="wrap_content"
+            android:textSize="30dp"
+            android:textColor="@color/white"
+            android:text="Add Movie"
+            android:gravity="center"
+            android:paddingBottom="8dp"/>
 
-
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:background="#FF36444E"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
-        <com.google.android.material.textfield.TextInputEditText
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:hint="@string/add_movie_year"
-            android:id="@+id/item_year_release"
-            android:inputType="date"/>
+            android:layout_height="wrap_content"
+            android:background="#BFAFDAFA"
+            app:counterTextColor="@color/white"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint="@string/add_movie_title"
+                android:id="@+id/item_title"/>
+        </com.google.android.material.textfield.TextInputLayout>
 
-    </com.google.android.material.textfield.TextInputLayout>
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:background="#FF36444E"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
-        <com.google.android.material.textfield.TextInputEditText
+
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:hint="Enter movie genre"
-            android:id="@+id/item_genre" />
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="#BFAFDAFA"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint="@string/add_movie_year"
+                android:id="@+id/item_year_release"
+                android:inputType="date"/>
 
-    </com.google.android.material.textfield.TextInputLayout>
+        </com.google.android.material.textfield.TextInputLayout>
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:background="#36444E"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
-        <com.google.android.material.textfield.TextInputEditText
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:hint="@string/add_movie_description"
-            android:id="@+id/item_description" />
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="#BFAFDAFA"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint="Enter movie genre"
+                android:id="@+id/item_genre" />
 
-    </com.google.android.material.textfield.TextInputLayout>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="#BFAFDAFA"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:hint="@string/add_movie_description"
+                android:id="@+id/item_description" />
+
+        </com.google.android.material.textfield.TextInputLayout>
 
 
-    <ImageButton
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="15dp"
-        android:id="@+id/result_image"
-        android:contentDescription="@string/add_picture"
-        android:src="@drawable/baseline_add_a_photo_24"/>
+        <ImageButton
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="15dp"
+            android:id="@+id/result_image"
+            android:contentDescription="@string/add_picture"
+            android:src="@drawable/baseline_add_a_photo_24"
+            android:background="#BFAFDAFA"/>
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/add_movie"
-        android:id="@+id/finish_btn"
-        android:layout_gravity="center"
-        android:layout_marginTop="10dp"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/add_movie"
+            android:id="@+id/finish_btn"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            app:backgroundTint="#2AD89999"/>
 
 
-</LinearLayout>
+    </LinearLayout>
+</ScrollView>
