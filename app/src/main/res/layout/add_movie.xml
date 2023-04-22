@@ -18,7 +18,7 @@
             android:layout_height="wrap_content"
             android:textSize="30dp"
             android:textColor="@color/white"
-            android:text="Add Movie"
+            android:text="@string/add_movie"
             android:gravity="center"
             android:paddingBottom="8dp"/>
 
@@ -61,7 +61,7 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:hint="Enter movie genre"
+                android:hint="@string/add_movie_genre"
                 android:id="@+id/item_genre" />
 
         </com.google.android.material.textfield.TextInputLayout>
