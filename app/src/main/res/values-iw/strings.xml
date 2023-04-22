@@ -18,4 +18,7 @@
 
     <string name="orders">לחץ לחיצה כדי להציג פרטים\nלחץ לחיצה ארוכה כדי לערוך\nהחלק לצד כדי למחוק</string>
 
+    <string name="edit_movie">ערוך סרט</string>
+
+
 </resources>

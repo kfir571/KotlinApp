@@ -16,6 +16,6 @@
     <string name="delete_movie_btn">Delete</string>
     <string name="delete_movie_cancel_btn">Cancel</string>
 
-    <string name="orders">click for more details\nLong click for editing\nSwipe to delete</string>
+    <string name="orders">Long click for more details\nSwipe to delete</string>
 </resources>
 
