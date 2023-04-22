@@ -17,6 +17,8 @@
     <string name="delete_movie_cancel_btn">ביטול</string>
 
     <string name="orders">לחץ לחיצה ארוכה כדי להציג פרטים\nהחלק לצד כדי למחוק</string>
+
     <string name="edit_movie">ערוך סרט</string>
+
 
 </resources>
