@@ -16,6 +16,6 @@
     <string name="delete_movie_btn">מחיקה</string>
     <string name="delete_movie_cancel_btn">ביטול</string>
 
-    <string name="orders">לחץ לחיצה ארוכה כדי להציג פרטים\nהחלק לצד כדי למחוק</string>
+    <string name="orders">לחץ לחיצה כדי להציג פרטים\nלחץ לחיצה ארוכה כדי לערוך\nהחלק לצד כדי למחוק</string>
 
 </resources>
