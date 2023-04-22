@@ -42,6 +42,13 @@ class ShowMoviesFragment:Fragment() {
         binding.fab.setOnClickListener {
             findNavController().navigate(R.id.action_showMoviesFragment_to_addMovieFragment2)
         }
+        binding.info.setOnClickListener {
+            Snackbar.make(
+                requireView(),
+                getString(R.string.orders), Toast.LENGTH_SHORT
+            ).show()
+        }
+
         return binding.root
     }
 
@@ -54,10 +61,10 @@ class ShowMoviesFragment:Fragment() {
             binding.recycler.adapter = MovieAdapter(it, object : MovieAdapter.MovieListener {
 
                 override fun onItemClicked(index: Int) {
-                    Snackbar.make(
-                       requireView(),
-                        getString(R.string.orders), Toast.LENGTH_SHORT
-                    ).show()
+//                    Snackbar.make(
+//                       requireView(),
+//                        getString(R.string.orders), Toast.LENGTH_SHORT
+//                    ).show()
                 }
 
                 override fun onItemLongClicked(index: Int) {
