@@ -32,10 +32,6 @@ class ShowMoviesFragment:Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // The line setHasOptionsMenu(true) indicates that this fragment has its own options menu
-        // Eran used it for 'delete all' button
-        setHasOptionsMenu(true)
-
         // Creating the connection var from the data (model) to our UI
         _binding = ShowMoviesBinding.inflate(inflater,container,false)
 
