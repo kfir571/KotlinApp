@@ -27,7 +27,7 @@
         android:contentDescription="@string/add"
         android:id="@+id/fab"
         app:borderWidth="3dp"
-        app:backgroundTint="#8B8E8F91"/>
+        app:backgroundTint="#8BBDBEBF"/>
 
     <ImageView
         android:layout_width="30dp"
@@ -39,6 +39,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_margin="8dp"
         android:id="@+id/info"
+        app:backgroundTint="#B9FDFEFF"
         />
 
 
