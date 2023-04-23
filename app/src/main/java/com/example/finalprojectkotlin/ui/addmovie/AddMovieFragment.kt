@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.os.bundleOf
@@ -16,6 +17,7 @@ import com.example.finalprojectkotlin.data.model.Movie
 import com.example.finalprojectkotlin.R
 import com.example.finalprojectkotlin.databinding.AddMovieBinding
 import com.example.finalprojectkotlin.ui.moviesViewModel
+import com.google.android.material.snackbar.Snackbar
 
 class AddMovieFragment:Fragment() {
 
@@ -47,20 +49,45 @@ class AddMovieFragment:Fragment() {
 
         // Adding the movie (with the data the user entered) to our local DB
         binding.finishBtn.setOnClickListener {
-            val movie  = Movie(binding.itemTitle.text.toString(),
-                binding.itemDescription.text.toString(),
-                binding.itemGenre.text.toString(),
-                binding.itemYearRelease.text.toString(),
-                imageUri.toString())
+            var emptyFields = ""
+            if (binding.itemTitle.text.toString().isEmpty()){
+                emptyFields += "${getString(R.string.title)}\n"
+            }
+            if (binding.itemDescription.text.toString().isEmpty()){
+                emptyFields += "${getString(R.string.description)}\n"
+            }
+            if (binding.itemGenre.text.toString().isEmpty()){
+                emptyFields += "${getString(R.string.genre)}\n"
+            }
+            if (binding.itemYearRelease.text.toString().isEmpty()){
+                emptyFields += "${getString(R.string.year)}\n"
+            }
+            if (imageUri.toString().isEmpty()){
+                emptyFields += "${getString(R.string.image)}"
+            }
 
-            viewModel.addMovie(movie)
+            if(emptyFields.isNotEmpty()){
+                val note = Snackbar.make(
+                    requireView(),
+                    "${getString(R.string.pls_fill)}\n$emptyFields", Toast.LENGTH_SHORT)
+                note.setTextMaxLines(6)
+                note.show()
+            }
+            else{
+                val movie  = Movie(binding.itemTitle.text.toString(),
+                    binding.itemDescription.text.toString(),
+                    binding.itemGenre.text.toString(),
+                    binding.itemYearRelease.text.toString(),
+                    imageUri.toString())
 
-            // Going back to hone screen
-            findNavController().navigate(
-                R.id.action_addMovieFragment2_to_showMoviesFragment
-                , bundleOf("movie" to movie)
-            )
+                viewModel.addMovie(movie)
 
+                // Going back to hone screen
+                findNavController().navigate(
+                    R.id.action_addMovieFragment2_to_showMoviesFragment
+                    , bundleOf("movie" to movie)
+                )
+            }
         }
 
         binding.resultImage.setOnClickListener {
