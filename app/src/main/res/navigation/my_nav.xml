@@ -11,14 +11,32 @@
         tools:layout="@layout/show_movies" >
         <action
             android:id="@+id/action_showMoviesFragment_to_detailsMovieFragment2"
-            app:destination="@id/detailsMovieFragment2" />
+            app:destination="@id/detailsMovieFragment2"
+            app:enterAnim="@anim/from_left"
+            app:exitAnim="@anim/to_right"
+            app:popEnterAnim="@anim/from_right"
+            app:popExitAnim="@anim/to_left" />
         <action
             android:id="@+id/action_showMoviesFragment_to_addMovieFragment2"
-            app:destination="@id/addMovieFragment2" />
+            app:destination="@id/addMovieFragment2"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right" />
         <action
             android:id="@+id/action_showMoviesFragment_to_editMovieFragment"
             app:destination="@id/editMovieFragment"
-            app:popUpToInclusive="false" />
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right" />
+        <action
+            android:id="@+id/action_showMoviesFragment_to_addMovieFragment"
+            app:destination="@id/addMovieFragment2"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right" />
     </fragment>
     <fragment
         android:id="@+id/addMovieFragment2"
@@ -28,6 +46,10 @@
         <action
             android:id="@+id/action_addMovieFragment2_to_showMoviesFragment"
             app:destination="@id/showMoviesFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right"
             app:popUpTo="@id/showMoviesFragment"
             app:popUpToInclusive="true" />
     </fragment>
@@ -44,6 +66,17 @@
         <action
             android:id="@+id/action_editMovieFragment_to_showMoviesFragment"
             app:destination="@id/showMoviesFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popUpTo="@id/showMoviesFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_addMovieFragment2_to_showMoviesFragment"
+            app:destination="@id/showMoviesFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right"
             app:popUpTo="@id/showMoviesFragment"
             app:popUpToInclusive="true" />
     </fragment>

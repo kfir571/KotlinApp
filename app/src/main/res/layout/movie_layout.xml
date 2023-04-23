@@ -19,14 +19,13 @@
             android:contentDescription="TODO" />
 
         <TextView
-            android:layout_width="190dp"
+            android:layout_width="180dp"
             android:layout_height="wrap_content"
             android:id="@+id/movie_title"
             android:layout_alignStart="@+id/item_image"
             android:layout_alignTop='@+id/item_image'
             android:layout_marginStart="10dp"
             android:layout_marginTop="10dp"
-            android:gravity="left"
             android:text="@string/title"
             android:shadowColor="@color/black"
             android:textSize="20sp"
@@ -34,7 +33,7 @@
             android:textColor="@color/white"/>
 
         <TextView
-            android:layout_width="90dp"
+            android:layout_width="50dp"
             android:layout_height="30dp"
             android:id="@+id/Movie_year"
             android:layout_alignEnd="@+id/item_image"
@@ -48,13 +47,14 @@
             android:textSize="18sp" />
 
         <TextView
-            android:layout_width="90dp"
+            android:layout_width="60dp"
             android:layout_height="30dp"
             android:id="@+id/Movie_genre"
             android:layout_alignStart="@+id/item_image"
             android:layout_alignBottom="@+id/item_image"
             android:layout_marginStart="10dp"
             android:layout_marginBottom="10dp"
+            android:gravity="left"
             android:text="@string/genre"
             android:textColor="@color/white"
             android:textStyle="bold"
