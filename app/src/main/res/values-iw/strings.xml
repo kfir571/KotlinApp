@@ -15,10 +15,10 @@
     <string name="delete_movie_msg">האם אתה בטוח שאתה רוצה למחוק את הסרט מהרשימה?</string>
     <string name="delete_movie_btn">מחיקה</string>
     <string name="delete_movie_cancel_btn">ביטול</string>
-
-
+    <string name="description">תיאור</string>
+    <string name="image">תמונה</string>
+    <string name="pls_fill">אנא מלא את הפרטים הבאים:</string>
     <string name="orders">לחץ לחיצה כדי להציג פרטים\nלחץ לחיצה ארוכה כדי לערוך\nהחלק לצד כדי למחוק</string>
-    <string name="pls_fill">נא למלא את הפרטים הבאים:</string>
     <string name="edit_movie">ערוך סרט</string>
 
 </resources>
