@@ -68,15 +68,18 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="100dp"
             android:layout_marginTop="10dp"
             android:background="#BFAFDAFA"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/item_description"
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
+                android:layout_height="match_parent"
                 android:hint="@string/add_movie_description"
-                android:id="@+id/item_description" />
+                android:scrollbars="vertical"
+                android:scrollbarStyle="outsideOverlay"/>
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -98,7 +101,7 @@
             android:id="@+id/finish_btn"
             android:layout_gravity="center"
             android:layout_marginTop="10dp"
-            app:backgroundTint="#2AD89999"/>
+            app:backgroundTint="#8BBDBEBF"/>
 
 
     </LinearLayout>
