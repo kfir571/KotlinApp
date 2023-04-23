@@ -7,6 +7,8 @@
     <string name="title">כותרת</string>
     <string name="year">שנת יציאה</string>
     <string name="genre">ז\'אנר</string>
+    <string name="description">תיאור</string>
+    <string name="image">תמונה</string>
     <string name="add">הוסף</string>
     <string name="add_movie_title">שם הסרט</string>
     <string name="add_picture">הוספת תמונה</string>
@@ -16,7 +18,9 @@
     <string name="delete_movie_btn">מחיקה</string>
     <string name="delete_movie_cancel_btn">ביטול</string>
 
-    <string name="orders">לחץ לחיצה ארוכה כדי להציג פרטים\nהחלק לצד כדי למחוק</string>
+    <string name="orders">לחץ לחיצה קצרה כדי להצגת פרטים\nלחיצה ארוכה לעריכה\nהחלק לצד למחיקה</string>
     <string name="edit_movie">ערוך סרט</string>
+
+    <string name="pls_fill">בבקשה מלא את הפרטים הבאים:</string>
 
 </resources>
