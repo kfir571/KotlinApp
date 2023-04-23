@@ -19,11 +19,7 @@ import com.example.finalprojectkotlin.data.model.Movie
 import com.example.finalprojectkotlin.databinding.FragmentEditMovieBinding
 import com.example.finalprojectkotlin.ui.moviesViewModel
 
-/**
- * A simple [Fragment] subclass.
- * Use the [EditMovieFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
+
 class EditMovieFragment : Fragment() { // binding is the connector between our UI and our data
     private var _binding : FragmentEditMovieBinding? = null
 
@@ -67,7 +63,7 @@ class EditMovieFragment : Fragment() { // binding is the connector between our U
                 binding.itemYearRelease.text.toString(),
                 imageUri.toString())
 
-            viewModel.addMovie(movie)
+            viewModel.updateMovie(movie)
 
             // Going back to hone screen
             findNavController().navigate(

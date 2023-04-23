@@ -62,7 +62,7 @@ class AddMovieFragment:Fragment() {
             if (binding.itemYearRelease.text.toString().isEmpty()){
                 emptyFields += "${getString(R.string.year)}\n"
             }
-            if (imageUri.toString().isEmpty()){
+            if (imageUri?.toString().isNullOrEmpty()){
                 emptyFields += "${getString(R.string.image)}"
             }
 
