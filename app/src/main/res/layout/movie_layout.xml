@@ -19,21 +19,24 @@
             android:contentDescription="TODO" />
 
         <TextView
+            android:id="@+id/movie_title"
             android:layout_width="180dp"
             android:layout_height="wrap_content"
-            android:id="@+id/movie_title"
             android:layout_alignStart="@+id/item_image"
             android:layout_alignTop='@+id/item_image'
             android:layout_marginStart="10dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="9dp"
             android:text="@string/title"
+            android:textColor="@color/white"
             android:shadowColor="@color/black"
+            android:shadowDx="0"
+            android:shadowDy="0"
+            android:shadowRadius="4"
             android:textSize="20sp"
-            android:textStyle="bold"
-            android:textColor="@color/white"/>
+            android:textStyle="bold" />
 
         <TextView
-            android:layout_width="50dp"
+            android:layout_width="45dp"
             android:layout_height="30dp"
             android:id="@+id/Movie_year"
             android:layout_alignEnd="@+id/item_image"
@@ -43,20 +46,27 @@
             android:gravity="right"
             android:text="@string/year"
             android:textColor="@color/white"
+            android:shadowColor="@color/black"
+            android:shadowDx="0"
+            android:shadowDy="0"
+            android:shadowRadius="4"
             android:textStyle="bold"
             android:textSize="18sp" />
 
         <TextView
-            android:layout_width="60dp"
+            android:layout_width="75dp"
             android:layout_height="30dp"
             android:id="@+id/Movie_genre"
             android:layout_alignStart="@+id/item_image"
             android:layout_alignBottom="@+id/item_image"
             android:layout_marginStart="10dp"
             android:layout_marginBottom="10dp"
-            android:gravity="left"
             android:text="@string/genre"
             android:textColor="@color/white"
+            android:shadowColor="@color/black"
+            android:shadowDx="0"
+            android:shadowDy="0"
+            android:shadowRadius="4"
             android:textStyle="bold"
             android:textSize="18sp" />
 

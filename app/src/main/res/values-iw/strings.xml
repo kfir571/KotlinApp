@@ -20,5 +20,10 @@
     <string name="orders">לחץ לחיצה כדי להציג פרטים\nלחץ לחיצה ארוכה כדי לערוך\nהחלק לצד כדי למחוק</string>
     <string name="pls_fill">נא למלא את הפרטים הבאים:</string>
     <string name="edit_movie">ערוך סרט</string>
+    <string name="add_photo">הוסף תמונה</string>
+
+
+    <string name="description">תיאור</string>
+    <string name="image">תמונה</string>
 
 </resources>

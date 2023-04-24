@@ -21,5 +21,6 @@
     <string name="pls_fill">Please fill the following details:</string>
     <string name="orders">Click for more details\nLong click for editing\nSwipe to delete</string>
     <string name="edit_movie">Edit movie</string>
+    <string name="add_photo">Add Photo</string>
 </resources>
 
