@@ -50,6 +50,7 @@ class AddMovieFragment:Fragment() {
         _binding = AddMovieBinding.inflate(inflater,container,false)
 
 
+
         binding.itemTitle.addTextChangedListener(){
             binding.textTitle.text = binding.itemTitle.text.toString()
         }
@@ -61,6 +62,8 @@ class AddMovieFragment:Fragment() {
         }
 
         // Adding the movie (with the data the user entered) to our local DB
+
+        //check if all the details are full
         binding.finishBtn.setOnClickListener {
             var emptyFields = ""
             if (binding.itemTitle.text.toString().isEmpty()){
@@ -86,6 +89,7 @@ class AddMovieFragment:Fragment() {
                 note.setTextMaxLines(6)
                 note.show()
             }
+            // Adding the movie (with the data the user entered) to our local DB
             else{
                 val movie  = Movie(binding.itemTitle.text.toString(),
                     binding.itemDescription.text.toString(),
@@ -95,7 +99,7 @@ class AddMovieFragment:Fragment() {
 
                 viewModel.addMovie(movie)
 
-                // Going back to hone screen
+                // Going back to home screen
                 findNavController().navigate(
                     R.id.action_addMovieFragment2_to_showMoviesFragment
                     , bundleOf("movie" to movie)

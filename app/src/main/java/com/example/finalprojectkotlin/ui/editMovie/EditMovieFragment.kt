@@ -31,6 +31,7 @@ class EditMovieFragment : Fragment() { // binding is the connector between our U
 
     private var movieId: Int? = null
 
+
     // We use activityViewModels so that all our fragments will use the same instance of viewModel
     private val viewModel : moviesViewModel by activityViewModels()
 

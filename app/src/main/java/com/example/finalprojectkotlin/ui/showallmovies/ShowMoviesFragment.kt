@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.finalprojectkotlin.R
+import com.example.finalprojectkotlin.data.model.Movie
 import com.example.finalprojectkotlin.databinding.ShowMoviesBinding
 import com.example.finalprojectkotlin.ui.MainActivity
 import com.example.finalprojectkotlin.ui.moviesViewModel
@@ -31,10 +32,6 @@ class ShowMoviesFragment:Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // The line setHasOptionsMenu(true) indicates that this fragment has its own options menu
-        // Eran used it for 'delete all' button
-        setHasOptionsMenu(true)
-
         // Creating the connection var from the data (model) to our UI
         _binding = ShowMoviesBinding.inflate(inflater,container,false)
 
@@ -43,10 +40,11 @@ class ShowMoviesFragment:Fragment() {
             findNavController().navigate(R.id.action_showMoviesFragment_to_addMovieFragment2)
         }
         binding.info.setOnClickListener {
-            Snackbar.make(
+            val note = Snackbar.make(
                 requireView(),
-                getString(R.string.orders), Toast.LENGTH_SHORT
-            ).show()
+                getString(R.string.orders), Toast.LENGTH_SHORT)
+            note.setTextMaxLines(4)
+            note.show()
         }
 
         return binding.root
@@ -66,10 +64,7 @@ class ShowMoviesFragment:Fragment() {
                         R.id.action_showMoviesFragment_to_detailsMovieFragment2,
                         bundleOf("movie" to index)
                     )
-//                    Snackbar.make(
-//                       requireView(),
-//                        getString(R.string.orders), Toast.LENGTH_SHORT
-//                    ).show()
+
                 }
 
                 override fun onItemLongClicked(index: Int) {
@@ -78,11 +73,7 @@ class ShowMoviesFragment:Fragment() {
                         R.id.action_showMoviesFragment_to_editMovieFragment,
                         bundleOf("movie" to index)
                     )
-//                    viewModel.setMovie(it[index])
-//                    findNavController().navigate(
-//                        R.id.action_showMoviesFragment_to_detailsMovieFragment2,
-//                        bundleOf("movie" to index)
-//                    )
+
                 }
             })
             binding.recycler.layoutManager = LinearLayoutManager(requireContext())

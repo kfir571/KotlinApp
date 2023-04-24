@@ -12,15 +12,14 @@
     <string name="image">image</string>
     <string name="add">Add</string>
     <string name="add_picture">add_picture</string>
-
-
     <string name="delete_movie">Delete Movie</string>
     <string name="delete_movie_msg">Are you sure you want to delete this movie from the list?</string>
     <string name="delete_movie_btn">Delete</string>
     <string name="delete_movie_cancel_btn">Cancel</string>
-    <string name="pls_fill">Please fill the following details:</string>
     <string name="orders">Click for more details\nLong click for editing\nSwipe to delete</string>
     <string name="edit_movie">Edit movie</string>
     <string name="add_photo">Add Photo</string>
+    <string name="pls_fill">Please fill the following details:</string>
+
 </resources>
 
