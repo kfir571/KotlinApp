@@ -11,6 +11,7 @@ import android.widget.Toast
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.os.bundleOf
+import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
@@ -52,7 +53,16 @@ class EditMovieFragment : Fragment() { // binding is the connector between our U
 
 
         _binding = FragmentEditMovieBinding.inflate(inflater, container, false)
-
+        //Update the details on the photo real time
+        binding.itemTitle.addTextChangedListener(){
+            binding.textTitle.text = binding.itemTitle.text.toString()
+        }
+        binding.itemGenre.addTextChangedListener(){
+            binding.textGenre.text = binding.itemGenre.text.toString()
+        }
+        binding.itemYearRelease.addTextChangedListener(){
+            binding.textYear.text = binding.itemYearRelease.text.toString()
+        }
         viewModel.chosenMovie.observe(viewLifecycleOwner) {
             binding.itemTitle.text = Editable.Factory.getInstance().newEditable(it.title)
             binding.itemDescription.text =
