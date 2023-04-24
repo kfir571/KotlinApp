@@ -3,6 +3,7 @@ package com.example.finalprojectkotlin.ui.addmovie
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.text.Editable
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,6 +11,7 @@ import android.widget.Toast
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.os.bundleOf
+import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
@@ -46,6 +48,20 @@ class AddMovieFragment:Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         _binding = AddMovieBinding.inflate(inflater,container,false)
+
+
+
+        binding.itemTitle.addTextChangedListener(){
+            binding.textTitle.text = binding.itemTitle.text.toString()
+        }
+        binding.itemGenre.addTextChangedListener(){
+            binding.textGenre.text = binding.itemGenre.text.toString()
+        }
+        binding.itemYearRelease.addTextChangedListener(){
+            binding.textYear.text = binding.itemYearRelease.text.toString()
+        }
+
+        // Adding the movie (with the data the user entered) to our local DB
 
         //check if all the details are full
         binding.finishBtn.setOnClickListener {
@@ -93,6 +109,7 @@ class AddMovieFragment:Fragment() {
 
         binding.resultImage.setOnClickListener {
             chooseImageLauncher.launch(arrayOf("image/*"))
+            binding.addPhoto.text = ""
         }
         return binding.root
     }
