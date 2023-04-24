@@ -53,7 +53,7 @@ class EditMovieFragment : Fragment() { // binding is the connector between our U
 
 
         _binding = FragmentEditMovieBinding.inflate(inflater, container, false)
-        //Update the details on the photo real time
+        //display details real time
         binding.itemTitle.addTextChangedListener(){
             binding.textTitle.text = binding.itemTitle.text.toString()
         }
@@ -63,6 +63,7 @@ class EditMovieFragment : Fragment() { // binding is the connector between our U
         binding.itemYearRelease.addTextChangedListener(){
             binding.textYear.text = binding.itemYearRelease.text.toString()
         }
+        //show details in layout
         viewModel.chosenMovie.observe(viewLifecycleOwner) {
             binding.itemTitle.text = Editable.Factory.getInstance().newEditable(it.title)
             binding.itemDescription.text =
@@ -75,7 +76,7 @@ class EditMovieFragment : Fragment() { // binding is the connector between our U
             movieId = it.id
         }
 
-        // editing  the movie (with the data the user entered) to our local DB
+        //Check if all the details are full
         binding.finishBtn.setOnClickListener {
             var emptyFields = ""
             if (binding.itemTitle.text.toString().isEmpty()){
@@ -101,7 +102,7 @@ class EditMovieFragment : Fragment() { // binding is the connector between our U
                 note.setTextMaxLines(6)
                 note.show()
             }
-            // Adding the movie (with the data the user entered) to our local DB
+            // editing  the movie (with the data the user entered) to our local DB
             else {
                 val movie = Movie(
                     binding.itemTitle.text.toString(),

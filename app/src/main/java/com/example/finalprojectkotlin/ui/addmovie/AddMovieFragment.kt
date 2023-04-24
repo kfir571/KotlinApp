@@ -50,7 +50,7 @@ class AddMovieFragment:Fragment() {
         _binding = AddMovieBinding.inflate(inflater,container,false)
 
 
-
+        //display details real time
         binding.itemTitle.addTextChangedListener(){
             binding.textTitle.text = binding.itemTitle.text.toString()
         }
@@ -61,9 +61,7 @@ class AddMovieFragment:Fragment() {
             binding.textYear.text = binding.itemYearRelease.text.toString()
         }
 
-        // Adding the movie (with the data the user entered) to our local DB
-
-        //check if all the details are full
+        //Check if all the details are full
         binding.finishBtn.setOnClickListener {
             var emptyFields = ""
             if (binding.itemTitle.text.toString().isEmpty()){

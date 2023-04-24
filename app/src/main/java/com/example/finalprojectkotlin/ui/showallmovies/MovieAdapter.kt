@@ -8,7 +8,7 @@ import com.bumptech.glide.Glide
 import com.example.finalprojectkotlin.data.model.Movie
 import com.example.finalprojectkotlin.databinding.MovieLayoutBinding
 
-// maybe we should add 'private' to the val below
+
 class MovieAdapter(val movies:List<Movie>, val callBack: MovieListener)
     : RecyclerView.Adapter<MovieAdapter.MovieViewHolder>() {
 
