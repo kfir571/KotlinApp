@@ -77,8 +77,8 @@
         <action
             android:id="@+id/action_addMovieFragment2_to_showMoviesFragment"
             app:destination="@id/showMoviesFragment"
-            app:enterAnim="@anim/to_left"
-            app:exitAnim="@anim/from_right"
+            app:enterAnim="@anim/from_left"
+            app:exitAnim="@anim/to_right"
             app:popUpTo="@id/showMoviesFragment"
             app:popUpToInclusive="true" />
     </fragment>
